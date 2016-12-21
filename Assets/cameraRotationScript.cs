@@ -4,7 +4,7 @@ using System.Collections;
 
 public class cameraRotationScript : MonoBehaviour {
 
-	public static float rotationSpeed = 1.25f;
+	public static float rotationSpeed = 0.5f;
     float rotSpeedX;
     float rotSpeedY;
 	public static float multX = 0.3f;
@@ -37,76 +37,43 @@ public class cameraRotationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rotSpeedY = 0;
-		if (Input.mousePosition.x < (int)((screenWidth / 2) * (1 - multX)) || Input.mousePosition.x > (int)((screenWidth / 2) * (1 + multX))) {
-			rotSpeedX = -1 + 2 * (Input.mousePosition.x / screenWidth);
-			Camera.main.transform.Rotate(0f, rotationSpeed * rotSpeedX, 0f, Space.World);
-		}
-
-        State = getState();
-		//State = 0;
-		//print("Rotation: " + transform.rotation);
-        //print ("State: " + State.ToString());
-        switch (State) {
-		case (0):
-			if (Input.mousePosition.y < (int)((screenHeight / 2) * (1 - multY)) || Input.mousePosition.y > (int)((screenHeight / 2) * (1 + multY))) {
-				rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
-				//print (" 0 Speed: " + rotSpeedY.ToString ());
-			}
-			break;
-		case (2):
-			if (Input.mousePosition.y > (int)(screenHeight / 2) * (1 + multY)) {
-				rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
-				//print (" 2 Speed: " + rotSpeedY.ToString ());
-			}
-			break;
-		case (1):
-			if (Input.mousePosition.y < (int)((screenHeight / 2) * (1 - multY))) {
-				rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
-				//print (" 1 Speed: " + rotSpeedY.ToString ());
-			}
-			break;
-		default:
+		if (!gameManager.paused) {
 			rotSpeedY = 0;
-			break;
-		}
-		Camera.main.transform.Rotate (-rotationSpeed * rotSpeedY, 0f, 0f, Space.Self);
+			if (Input.mousePosition.x < (int)((screenWidth / 2) * (1 - multX)) || Input.mousePosition.x > (int)((screenWidth / 2) * (1 + multX))) {
+				rotSpeedX = -1 + 2 * (Input.mousePosition.x / screenWidth);
+				Camera.main.transform.Rotate (0f, rotationSpeed * rotSpeedX, 0f, Space.World);
+			}
 
-		#region 
-			/*if (Camera.main.transform.rotation.x <= 0.5f && Camera.main.transform.rotation.x >= -0.5f) {
-				if (Input.mousePosition.y < (int)((screenHeight / 2) * (1 - multY)) || Input.mousePosition.y > (int)(screenHeight / 2) * (1 + multY)) {
+			State = getState ();
+			//State = 0;
+			//print("Rotation: " + transform.rotation);
+			//print ("State: " + State.ToString());
+			switch (State) {
+			case (0):
+				if (Input.mousePosition.y < (int)((screenHeight / 2) * (1 - multY)) || Input.mousePosition.y > (int)((screenHeight / 2) * (1 + multY))) {
 					rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
-					Camera.main.transform.Rotate (-rotationSpeed * rotSpeedY, 0f, 0f, Space.Self);
+					//print (" 0 Speed: " + rotSpeedY.ToString ());
 				}
-			} else if (Camera.main.transform.rotation.x > 0.5f) {
-				//print (Camera.main.transform.rotation);
-				Camera.main.transform.Rotate((xRotation - 0.4f),0f,0f);
-			} else if (Camera.main.transform.rotation.x < -0.5f) {
-				Camera.main.transform.Rotate((xRotation + 0.4f),0f,0f);
-			} 
-			//else {
-			//	Camera.main.transform.rotation = Quaternion.Euler(0f,0,0);
-			//}
-				/*
-	        if (Input.GetKey(KeyCode.UpArrow) == true)
-	        {
-	            Camera.main.transform.Rotate(-rotationSpeed, 0f, 0f);
-	        }
-	        if (Input.GetKey(KeyCode.DownArrow) == true)
-	        {
-	            Camera.main.transform.Rotate(rotationSpeed, 0f, 0f);
-	        }
-	        if (Input.GetKey(KeyCode.RightArrow) == true)
-	        {
-	            Camera.main.transform.Rotate(0, rotationSpeed, 0f, Space.World);
-	        }
-	        if (Input.GetKey(KeyCode.LeftArrow) == true)
-	        {
-	            Camera.main.transform.Rotate(0, -rotationSpeed, 0f, Space.World);
-	        }
-	        */
+				break;
+			case (2):
+				if (Input.mousePosition.y > (int)(screenHeight / 2) * (1 + multY)) {
+					rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
+					//print (" 2 Speed: " + rotSpeedY.ToString ());
+				}
+				break;
+			case (1):
+				if (Input.mousePosition.y < (int)((screenHeight / 2) * (1 - multY))) {
+					rotSpeedY = -1 + 2 * (Input.mousePosition.y / screenHeight);
+					//print (" 1 Speed: " + rotSpeedY.ToString ());
+				}
+				break;
+			default:
+				rotSpeedY = 0;
+				break;
+			}
+			Camera.main.transform.Rotate (-rotationSpeed * rotSpeedY, 0f, 0f, Space.Self);
 
-        	//Camera.main.transform.Rotate(1f, 0f, 0f, Space.World);
-		#endregion
+		}
+		//print (rotationSpeed);
     }
 }

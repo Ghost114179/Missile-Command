@@ -66,8 +66,11 @@
      <Compile Include="Assets\delayBar.cs" />
      <Compile Include="Assets\difficultyBehavior.cs" />
      <Compile Include="Assets\explosionScript.cs" />
+     <Compile Include="Assets\gameManager.cs" />
      <Compile Include="Assets\liveMissiles.cs" />
      <Compile Include="Assets\missileLauncherBehavior.cs" />
+     <Compile Include="Assets\pauseManager.cs" />
+     <Compile Include="Assets\settingBehavior.cs" />
      <Compile Include="Assets\spreadBehavior.cs" />
      <Compile Include="Assets\startupCamera.cs" />
      <Compile Include="Assets\stateCheckBehavior.cs" />
