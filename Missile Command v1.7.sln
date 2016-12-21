@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4A1851D5-D4AB-018D-6EBD-1C4C23AB7FF4}") = "Missile Command v1.7", "Assembly-CSharp.csproj", "{0975AC06-50D5-71A1-B461-26637366E53D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0975AC06-50D5-71A1-B461-26637366E53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0975AC06-50D5-71A1-B461-26637366E53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0975AC06-50D5-71A1-B461-26637366E53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0975AC06-50D5-71A1-B461-26637366E53D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
