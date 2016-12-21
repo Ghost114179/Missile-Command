@@ -69,7 +69,7 @@ public class fireBehavior : MonoBehaviour {
 					Shot.targetMissile = targetMissile;
 					fireDelay = guidedDelay;
 				} else {
-					GameObject newRegular = (GameObject)Instantiate (bullet, transform.position, transform.rotation);
+					GameObject errorRegular = (GameObject)Instantiate (bullet, transform.position, transform.rotation);
 					fireDelay = guidedDelay;
 				}
 				break;
