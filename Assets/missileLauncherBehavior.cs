@@ -3,10 +3,12 @@ using System.Collections;
 
 public class missileLauncherBehavior : MonoBehaviour {
 
-    Object missile;
+    public Object missile;
+	public Object FastMissile;
+	public Object EMP;
     Vector3 newVector;
     Random randGenerator;
-    float timeDelay = 5;
+	float timeDelay = 1;//5;
     float timeSinceLastCreation;
     //float MapWidth = 500;
     //float MapHeight = 500;
@@ -14,16 +16,11 @@ public class missileLauncherBehavior : MonoBehaviour {
     int missileCount = 0;
     //int round = 1;
 
-    AudioSource creationSource;
+    public AudioSource creationSource;
 
     // Use this for initialization
     void Start () {
-        missile = Resources.Load("Missile");
-        fireMissile();
-
         creationSource = GetComponent<AudioSource>();
-        creationSource.Play();
-
     }
 	
 	// Update is called once per frame
@@ -40,7 +37,6 @@ public class missileLauncherBehavior : MonoBehaviour {
 
     void fireMissile()
     {
-       // creationSource.Play();
         missileCount += 1;
         timeSinceLastCreation = Time.time;
 		if (updateTimeDelay) {
@@ -49,8 +45,15 @@ public class missileLauncherBehavior : MonoBehaviour {
         float missileLocX = Random.Range(-250,250);
         float missileLocZ = Random.Range(-250,250);
         newVector = new Vector3(missileLocX, 350, missileLocZ);
-        GameObject newMissile = (GameObject)Instantiate(missile, newVector, transform.rotation);
-        
+		int RandomNumber = Random.Range (0, 9);
+		//print (RandomNumber);
+		if (RandomNumber <= 6) {
+			GameObject newMissile = (GameObject)Instantiate (missile, newVector, transform.rotation);
+		} else if (RandomNumber <= 8) {
+			GameObject newEMP = (GameObject)Instantiate (EMP, newVector, transform.rotation);
+		} else {
+			GameObject newFastMissile = (GameObject)Instantiate (FastMissile, newVector, transform.rotation);
+		}
     }
 
     void applyTimeDelta(int missilesShot)

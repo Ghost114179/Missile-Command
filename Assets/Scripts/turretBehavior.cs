@@ -16,7 +16,7 @@ public class turretBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		referenceFile.Update();
-		if(referenceFile.turretControl == turretID)
+		if(referenceFile.turretControl == turretID && empExplosion.Shutdown == false)
 		{
 			if(Input.GetKey(KeyCode.D) == true)
 			{

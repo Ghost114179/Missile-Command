@@ -18,7 +18,7 @@ public class barrelBehavior : MonoBehaviour {
     void Update() {
         #region barrelRotation
         referenceFile.Update();
-        if (referenceFile.turretControl == turretID)
+		if (referenceFile.turretControl == turretID && empExplosion.Shutdown == false)
         {
             if (transform.eulerAngles.z < 90 && transform.eulerAngles.z > 0) //In between targets!
             {

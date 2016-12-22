@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\missileBehavior.cs" />
      <Compile Include="Assets\Scripts\shellBehavior.cs" />
      <Compile Include="Assets\Scripts\turretBehavior.cs" />
+     <Compile Include="Assets\SilentExplosion.cs" />
      <Compile Include="Assets\UIBehavior.cs" />
      <Compile Include="Assets\audioBehavior.cs" />
      <Compile Include="Assets\barrelBehavior.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\deadZone.cs" />
      <Compile Include="Assets\delayBar.cs" />
      <Compile Include="Assets\difficultyBehavior.cs" />
+     <Compile Include="Assets\empExplosion.cs" />
      <Compile Include="Assets\explosionScript.cs" />
      <Compile Include="Assets\gameManager.cs" />
      <Compile Include="Assets\liveMissiles.cs" />
