@@ -4,21 +4,16 @@ using System.Collections;
 public class barrelBehavior : MonoBehaviour {
 
     // Use this for initialization
-	float barrelSpeed = 0.75f;//0.25f;
-    int state = 3; //Up direction enabled
-    vrBehavior referenceFile;
+	float barrelSpeed = 0.75f;
+    int state = 3; 
     public int turretID;
 
-    void Start()
-    {
-        referenceFile = new vrBehavior();
+    void Start(){
     }
 
     // Update is called once per frame
     void Update() {
-        #region barrelRotation
-        referenceFile.Update();
-		if (referenceFile.turretControl == turretID && empExplosion.Shutdown == false)
+		if (cameraRotationScript.activeTurretID == turretID && empExplosion.Shutdown == false)
         {
             if (transform.eulerAngles.z < 90 && transform.eulerAngles.z > 0) //In between targets!
             {
@@ -40,7 +35,6 @@ public class barrelBehavior : MonoBehaviour {
                     {
                         //Move barrel down
                         transform.Rotate(0, 0, -barrelSpeed);
-                        //print(transform.eulerAngles.z);
                     }
                     break;
                 case 2: //both directions enabled
@@ -48,13 +42,11 @@ public class barrelBehavior : MonoBehaviour {
                     {
                         //Move barrel up
                         transform.Rotate(0, 0, barrelSpeed);
-                        //print(transform.eulerAngles.z);
                     }
                     else if (Input.GetKey(KeyCode.S) == true)
                     {
                         //Move barrel down
                         transform.Rotate(0, 0, -barrelSpeed);
-                        //print(transform.eulerAngles.z);
                     }
                     break;
                 case 3: //down is disabled
@@ -62,18 +54,9 @@ public class barrelBehavior : MonoBehaviour {
                     {
                         //Move barrel up
                         transform.Rotate(0, 0, barrelSpeed);
-                        //print(transform.eulerAngles.z);
-                        //print("State 3!");
                     }
                     break;
-
             }
         }
-        #endregion
-
-       
-
-    }
-
-  
+	}
 }

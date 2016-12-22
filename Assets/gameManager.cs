@@ -6,9 +6,11 @@ public class gameManager : MonoBehaviour {
 	public Canvas pauseCanvas;
 	public Canvas pauseHUD;
 	// Use this for initialization
+
 	void Start () {
 		pauseCanvas.enabled = false;
 		pauseHUD.enabled = true;
+		Time.timeScale = 1.0f;
 	}
 	
 	// Update is called once per frame

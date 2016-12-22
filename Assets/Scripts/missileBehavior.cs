@@ -7,16 +7,17 @@ public class missileBehavior : MonoBehaviour
 	
 
 	float speed = 10f;
-	//20f
 	public GameObject target;
 	public GameObject explosion;
 	public GameObject smallExplosion;
 	public GameObject smallExplosionSilent;
 	float lastDestory;
 	float destroyTimeout = 0.05f;
-	//public List<GameObject> cities;
 	public AudioSource downTonesource;
-	// Use this for initialization
+	public List<GameObject> activeTargets;
+	float lastUpdate = 0.0f;
+	float updateDelay = 1.0f;
+
 
 	void Start ()
 	{
@@ -34,16 +35,29 @@ public class missileBehavior : MonoBehaviour
 			speed = 5f;
 			break;
 		}
+		GameObject[] cities = GameObject.FindGameObjectsWithTag ("cityTurret");
+		for (int i = 0; i < cities.Length; i++) {
+			activeTargets.Add (cities [i]);
+		}
+		updateActiveTargets ();
+	}
+
+	void updateActiveTargets() {
+		activeTargets.Remove(GameObject.FindGameObjectWithTag ("destroyedCity"));
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+		if (Time.time > lastUpdate + updateDelay) {
+			updateActiveTargets ();
+			lastUpdate = Time.time;
+		}
 		transform.position += transform.forward * speed * Time.deltaTime;
-		//if (not cities.Contains(target)) {
-		//	getTarget();
-		//	alignToTarget();
-		//}
+		if (activeTargets.Contains(target) != true) {
+			getTarget ();
+			alignToTarget ();
+		}
 	}
 
 	void alignToTarget ()

@@ -23,7 +23,6 @@ public class empExplosion : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider collider) {
-		//print (collider.gameObject.name);
 		if (collider.gameObject.name == "EMP(Clone)") {
 			Shutdown = true;
 			RebootTime = RestartTime;

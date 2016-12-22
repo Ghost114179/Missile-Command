@@ -5,13 +5,11 @@ using System;
 public class fireBehavior : MonoBehaviour {
 	
 	UnityEngine.Object bullet;
-	vrBehavior referenceFile;
 	public int turretID;
 	public static float lastFire;
 	public static float fireDelay = 0.25f;  //Tune this to what delay between shots should be
 	public static int shotType = 0;
 	float[,] defaultSpread = {{1f,-1f},{1f,0f},{1f,1f},{0f,-1f},{0f,0f},{0f,1f},{-1f,-1f},{-1f,0f},{-1f,1f}};
-	//audioBehavior sS = Command_Tower.GetComponent<audioBehavior>().shootSound();
 	public audioBehavior target;
 	public static float spreadMult = 1.0f;
 	public shellBehavior Shot;
@@ -24,22 +22,17 @@ public class fireBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		bullet = Resources.Load("playerShell");
-		referenceFile = new vrBehavior();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		referenceFile.Update();
-		#region firing
-		if (referenceFile.turretControl == turretID)
+		if (cameraRotationScript.activeTurretID == turretID)
 		{
 			if (Input.GetKey(KeyCode.Space))
 			{
 				fireShot(); //Fire a shell!
 			}
 		}
-
-		#endregion
 	}
 
 	void fireShot()
@@ -53,9 +46,7 @@ public class fireBehavior : MonoBehaviour {
 						adjustment [i] = defaultSpread [shotNum, i] * spreadMult;
 					}
 					GameObject newRound = (GameObject)Instantiate (bullet, transform.position, transform.rotation);
-					//print("Pre-Fired: " + shotNum.ToString() + " Rotation: " + newRound.transform.localRotation);
 					newRound.transform.Rotate (adjustment [1], adjustment [0], 0, Space.Self);
-					//print("Fired: " + shotNum.ToString() + " Rotation: " + newRound.transform.localRotation);
 				}
 				fireDelay = shatterDelay;
 				break;
@@ -92,7 +83,6 @@ public class fireBehavior : MonoBehaviour {
 		float smallestDirection = minAccuracyAngle;
 		for (int i = 0; i <= (missiles.Length - 1); i++) {
 			heading = Vector3.Angle(missiles[i].transform.position, this.gameObject.transform.forward);
-			//print ("Direction: " + heading);
 			if (heading < smallestDirection) {
 				ClosestMissile = missiles[i];
 				smallestDirection = heading;

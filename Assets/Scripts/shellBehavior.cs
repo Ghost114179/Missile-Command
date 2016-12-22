@@ -3,9 +3,9 @@ using System.Collections;
 
 public class shellBehavior : MonoBehaviour {
 
-	float speed = 150f;//150f;
+	float speed = 150f;
     float timeAtCreation;
-    float lifetime = 3; //30 seconds till deletion
+    float lifetime = 3; 
 	public bool updateDirection = false;
 	public GameObject targetMissile;
 
@@ -16,8 +16,6 @@ public class shellBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //print(timeAtCreation);
-		//print(updateDirection);
 		if (updateDirection) {
 			this.transform.LookAt(targetMissile.transform);
 		}

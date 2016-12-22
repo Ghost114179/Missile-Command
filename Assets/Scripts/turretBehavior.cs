@@ -5,18 +5,16 @@ using System.Collections;
 public class turretBehavior : MonoBehaviour {
 
 	// Use this for initialization
-	float rotationSpeed = 0.75f;//0.25f;
-	vrBehavior referenceFile;
+	float rotationSpeed = 0.75f;
 	public int turretID;
+
 	void Start () {
-		referenceFile = new vrBehavior();
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-		referenceFile.Update();
-		if(referenceFile.turretControl == turretID && empExplosion.Shutdown == false)
+		if(cameraRotationScript.activeTurretID == turretID && empExplosion.Shutdown == false)
 		{
 			if(Input.GetKey(KeyCode.D) == true)
 			{
