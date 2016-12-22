@@ -9,6 +9,7 @@ public class explosionScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         source = GetComponent<AudioSource>();
+		source.volume = volumeBehavior.volumeLevel;
         source.Play();
 	}
 	

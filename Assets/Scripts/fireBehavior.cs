@@ -37,7 +37,7 @@ public class fireBehavior : MonoBehaviour {
 
 	void fireShot()
 	{
-		if (Time.time > lastFire + fireDelay && empExplosion.Shutdown == false) {
+		if (Time.time > lastFire + fireDelay && empExplosion.Shutdown == false && gameManager.paused == false) {
 			switch (shotType) {
 			case 1: //Shatter
 				float[] adjustment = { 0f, 0f, 0f };

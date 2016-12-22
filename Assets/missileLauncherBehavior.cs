@@ -25,11 +25,9 @@ public class missileLauncherBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+		creationSource.volume = volumeBehavior.volumeLevel;
         if (Time.time >= timeSinceLastCreation + timeDelay)
         {
-			//print ("DELAYED_TIME: " + (float)(timeSinceLastCreation + timeDelay));
-			//print ("TIME: " + Time.time);
             fireMissile();
             creationSource.Play();
         }

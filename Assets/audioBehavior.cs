@@ -10,6 +10,7 @@ public class audioBehavior : MonoBehaviour {
 	}
 
 	public void shootSound() {
+		shootSource.volume = volumeBehavior.volumeLevel;
 		shootSource.Play ();
 	}
 }
