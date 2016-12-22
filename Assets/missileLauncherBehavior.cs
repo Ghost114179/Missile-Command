@@ -8,11 +8,11 @@ public class missileLauncherBehavior : MonoBehaviour {
     Random randGenerator;
     float timeDelay = 5;
     float timeSinceLastCreation;
-    float MapWidth = 500;
-    float MapHeight = 500;
+    //float MapWidth = 500;
+    //float MapHeight = 500;
 	bool updateTimeDelay = true;
     int missileCount = 0;
-    int round = 1;
+    //int round = 1;
 
     AudioSource creationSource;
 

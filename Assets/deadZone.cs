@@ -15,7 +15,7 @@ public class deadZone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 	void OnGUI() {

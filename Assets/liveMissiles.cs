@@ -13,6 +13,6 @@ public class liveMissiles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
-		Missiles.text = ("Live Missiles: " + missiles.Length).ToString ();
+		Missiles.text = ("Live Missiles:\n" + missiles.Length).ToString ();
 	}
 }

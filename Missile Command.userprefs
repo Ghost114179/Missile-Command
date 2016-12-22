@@ -1,9 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/cameraRotationScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/vrBehavior.cs">
     <Files>
-      <File FileName="Assets/settingBehavior.cs" Line="12" Column="2" />
-      <File FileName="Assets/cameraRotationScript.cs" Line="77" Column="5" />
+      <File FileName="Assets/citiesRemaining.cs" Line="12" Column="18" />
+      <File FileName="Assets/stateCheckBehavior.cs" Line="24" Column="24" />
+      <File FileName="Assets/difficultyBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/startupCamera.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/fireBehavior.cs" Line="89" Column="17" />
+      <File FileName="Assets/missileLauncherBehavior.cs" Line="15" Column="7" />
+      <File FileName="Assets/vrBehavior.cs" Line="8" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

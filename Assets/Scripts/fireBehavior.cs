@@ -87,15 +87,11 @@ public class fireBehavior : MonoBehaviour {
 
 	GameObject getClosestMissile() {
 		float heading;
-		Vector3 Direction;
 		GameObject[] missiles = GameObject.FindGameObjectsWithTag ("Missile");
 		GameObject ClosestMissile = null;
 		float smallestDirection = minAccuracyAngle;
-		float sumDirection;
-		float distance;
 		for (int i = 0; i <= (missiles.Length - 1); i++) {
 			heading = Vector3.Angle(missiles[i].transform.position, this.gameObject.transform.forward);
-			distance = Vector3.Distance(missiles[i].transform.position, this.gameObject.transform.forward);
 			//print ("Direction: " + heading);
 			if (heading < smallestDirection) {
 				ClosestMissile = missiles[i];

@@ -34,7 +34,7 @@ public class spreadBehavior : MonoBehaviour {
 				break;
 
 			case 2:
-				status = "Self-Guided Round";
+				status = "Self-Guided\nRound";
 				break;
 			
 			default:
@@ -59,6 +59,10 @@ public class spreadBehavior : MonoBehaviour {
 	}
 
 	void updateText() {
-		weaponText.text = (status + "\nSpread Value: " + Math.Round(fireBehavior.spreadMult, 1)).ToString ();
+		if (fireBehavior.shotType != 1) {
+			weaponText.text = status;
+		} else {
+			weaponText.text = (status + "\nSpread Value: " + Math.Round (fireBehavior.spreadMult, 1)).ToString ();
+		}
 	}
 }

@@ -25,7 +25,7 @@ public class settingBehavior : MonoBehaviour {
 
 		lookSensitivityText.text = displayText + displaySliderValue;
 		if (Time.time > lastUpdate + updateDelay) {
-			cameraRotationScript.rotationSpeed = sliderValue;
+			cameraRotationScript.rotationSpeed = ((sliderValue * 3f) + 0.5f); //from 0.5f to 3.5f
 			lastUpdate = Time.time;
 		}
 	}

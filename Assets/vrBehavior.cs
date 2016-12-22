@@ -6,7 +6,6 @@ public class vrBehavior : MonoBehaviour {
 
 
     Quaternion currentRotation;
-    float rotationSpeed = 0.05f;
     public int turretControl;
 
     // Use this for initialization
@@ -17,20 +16,7 @@ public class vrBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Update () {
-
         currentRotation = Camera.main.transform.localRotation;
-     /*
-        if (Input.GetKey(KeyCode.E) == true)
-        {
-            Camera.main.transform.Rotate(0, rotationSpeed, 0f);
-        }
-        if (Input.GetKey(KeyCode.Q) == true)
-        {
-            Camera.main.transform.Rotate(0, -rotationSpeed, 0f);
-        } */
-
-        //Read Rotation
-
         if (currentRotation.eulerAngles.y >= 0 && currentRotation.eulerAngles.y < 120)
         {
             turretControl = 1;
