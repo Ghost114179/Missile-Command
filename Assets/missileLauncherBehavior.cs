@@ -2,21 +2,16 @@
 using System.Collections;
 
 public class missileLauncherBehavior : MonoBehaviour {
-
+	
+	public AudioSource creationSource;
     public Object missile;
 	public Object FastMissile;
 	public Object EMP;
     Vector3 newVector;
-    Random randGenerator;
 	float timeDelay = 1;//5;
     float timeSinceLastCreation;
-    //float MapWidth = 500;
-    //float MapHeight = 500;
 	bool updateTimeDelay = true;
     int missileCount = 0;
-    //int round = 1;
-
-    public AudioSource creationSource;
 
     // Use this for initialization
     void Start () {

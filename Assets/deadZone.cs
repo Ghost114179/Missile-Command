@@ -6,8 +6,6 @@ public class deadZone : MonoBehaviour {
 	int screenWidth = Screen.width;
 	int screenHeight = Screen.height;
 
-	float lastUpdate = 0f;
-	float updateDelay = 0.25f;
 	// Use this for initialization
 	void Start () {
 		

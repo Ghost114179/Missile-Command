@@ -54,7 +54,7 @@ public class missileBehavior : MonoBehaviour
 			lastUpdate = Time.time;
 		}
 		transform.position += transform.forward * speed * Time.deltaTime;
-		if (activeTargets.Contains(target) != true) {
+		if (activeTargets.Contains(target) != true && this.name != "EMP(Clone)") {
 			getTarget ();
 			alignToTarget ();
 		}

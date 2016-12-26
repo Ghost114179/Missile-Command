@@ -50,7 +50,6 @@
      <Compile Include="Assets\HUDBehavior.cs" />
      <Compile Include="Assets\ScoreCount.cs" />
      <Compile Include="Assets\Scripts\fireBehavior.cs" />
-     <Compile Include="Assets\Scripts\invisible.cs" />
      <Compile Include="Assets\Scripts\missileBehavior.cs" />
      <Compile Include="Assets\Scripts\shellBehavior.cs" />
      <Compile Include="Assets\Scripts\turretBehavior.cs" />
@@ -77,6 +76,7 @@
      <Compile Include="Assets\spreadBehavior.cs" />
      <Compile Include="Assets\startupCamera.cs" />
      <Compile Include="Assets\stateCheckBehavior.cs" />
+     <Compile Include="Assets\tutorialMissileLauncherBehavior.cs" />
      <Compile Include="Assets\volumeBehavior.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
